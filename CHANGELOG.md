@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.2 - (2026-06)
+
+- Fixed iOS linker errors (`_OBJC_CLASS_$_CXProvider`, `CXHandle`, `CXCallUpdate`, `CXProviderConfiguration`) on Xcode 26 by explicitly declaring `CallKit` and `PushKit` as linked frameworks in the podspec. Previously these were resolved via auto-linking which Xcode 26 no longer applies implicitly for CocoaPods-integrated plugins.
+
 ## 1.1.1 - (2026-04)
 
 - Fixed Android accept-from-notification behavior on modern Android versions by removing the service-to-activity trampoline path that could block app launch when the app was fully closed.
